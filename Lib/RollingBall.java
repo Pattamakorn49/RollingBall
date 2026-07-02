@@ -9,7 +9,10 @@ public class RollingBall extends JPanel implements ActionListener{
 
     int x = 100;
     int start_angle = 0;
-   
+    public RollingBall(){
+        Timer T = new Timer(10, this);
+        T.start();
+    }
     
     public void paintComponent(Graphics g){
         super.paintComponent(g);
@@ -19,6 +22,13 @@ public class RollingBall extends JPanel implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        x -= 2;
+        start_angle += 2 ;
+        if(x <- 80)
+            x = getWidth();
+        if(start_angle >= 360)
+            start_angle = 0;
+        repaint();
     }
 
 
